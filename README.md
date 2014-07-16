@@ -56,5 +56,5 @@ The playbook demonstrates the following fetures of Ansible:
 
    ```
    $ cd rax-ansible-demo
-   $ ansible-playbook -i inventory/prod site.yml
+   $ RAX_REGION=DFW ansible-playbook -i inventory site.yml
    ```
