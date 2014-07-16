@@ -1,0 +1,25 @@
+---
+- name: Provision web servers
+  rax:
+    credentials: ~/.rackspace_cloud_credentials
+    name: "web_%01d"
+    flavor: performance1-1
+    image: ubuntu-1404-lts-trusty-tahr
+    networks:
+      - public
+    region: "{{ lookup('env', 'RAX_REGION') | upper }}"
+    state: present
+    count: 2
+    exact_count: yes
+    group: webservers
+    wait: yes
+    key_name: mine
+  register: rax_webservers
+
+- name: Add web servers to webservers host group
+  add_host:
+    hostname: "{{ item.name }}"
+    ansible_ssh_host: "{{ item.rax_accessipv4 }}"
+    groupname: webservers
+  with_items: rax_webservers.success
+  when: rax_webservers.action == 'create'

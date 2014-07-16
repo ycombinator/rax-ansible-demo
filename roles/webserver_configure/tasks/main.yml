@@ -1,0 +1,20 @@
+---
+- name: Install nginx and PHP
+  apt: name={{ item }} state=installed update_cache=yes
+  with_items:
+  - nginx
+  - php5-fpm
+  - php5
+
+- name: Create document root
+  file: path={{ docroot }} state=directory
+
+- name: Create index.php in document root
+  copy: src=index.php dest={{ docroot }}/index.php
+  
+- name: Create nginx config file for server
+  template: src=demosite.conf.j2 dest=/etc/nginx/sites-available/demosite.conf
+
+- name: Enable nginx config file for server
+  file: path=/etc/nginx/sites-enabled/demosite.conf src=/etc/nginx/sites-available/demosite.conf state=link
+  notify: restart nginx
