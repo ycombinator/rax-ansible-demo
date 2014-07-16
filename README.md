@@ -1,7 +1,16 @@
 # Demo playbook for Rackspace Cloud
-This Ansible playbook sets up 1 Cloud Load Balancer and 2 Cloud Servers behind it.
+This demonstration Ansible playbook sets up 1 Cloud Load Balancer and 2 Cloud Servers behind it.
 
-# Setup
+The playbook demonstrates the following fetures of Ansible:
+* Playbooks
+* Roles
+* Inventory, including dynamic inventory
+* Tasks, including `with_items`
+* Handlers
+* Registered variables
+* Filters
+
+# Usage
 1. [Sign in](https://mycloud.rackspace.com/) to your Rackspace Cloud account and make note of your username and API key.
 
 
