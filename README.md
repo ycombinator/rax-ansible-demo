@@ -26,7 +26,16 @@ The playbook demonstrates the following fetures of Ansible:
    ```
    $ pip install pyrax
    ```
-   
+
+1. Setup an Ansible configuration file.
+
+   ```
+   $ cat > ~/.ansible.cfg <<EOT
+   [defaults]
+   host_key_checking = False
+   EOT
+   ```
+
 1. Setup your Rackspace Cloud credentials.
 
    ```
