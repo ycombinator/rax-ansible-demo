@@ -1,0 +1,14 @@
+# Setup web servers
+---
+- name: Provision web servers
+  hosts: local
+  connection: local
+  roles:
+  - webserver_provision
+
+- name: Configure web servers
+  hosts: webservers
+  remote_user: root
+  roles:
+  - role: webserver_configure
+    docroot: /var/www/html/demosite
