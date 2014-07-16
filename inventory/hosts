@@ -1,0 +1,8 @@
+#
+# Since we are working with Cloud Servers and Cloud Load Balancers, there
+# is no hardcoded inventory here! Instead, we "talk" to localhost since
+# pyrax is installed there and use it to talk to the Rackspace Cloud. Comprende?
+#
+
+[local]
+localhost
