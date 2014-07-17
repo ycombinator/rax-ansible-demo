@@ -6,7 +6,8 @@
     flavor: performance1-1
     image: ubuntu-1404-lts-trusty-tahr
     networks:
-      - public
+    - public
+    - private
     region: "{{ lookup('env', 'RAX_REGION') | upper }}"
     state: present
     count: 2

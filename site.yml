@@ -1,0 +1,26 @@
+# Playbook to provision a simple load-balanced web setup.
+---
+- name: Provision web servers
+  hosts: local
+  connection: local
+  roles:
+  - webserver_provision
+
+- name: Configure web servers
+  hosts: webservers
+  remote_user: root
+  roles:
+  - role: webserver_configure
+    docroot: /var/www/html/demo_site
+
+- name: Provision load balancer
+  hosts: local
+  connection: local
+  roles:
+  - load_balancer_provision
+
+- name: Configure load balancer
+  hosts: local
+  connection: local
+  roles:
+  - load_balancer_configure

@@ -1,0 +1,15 @@
+---
+- name: Provision load balancer
+  rax_clb:
+    credentials: ~/.rackspace_cloud_credentials
+    name: demo_site
+    port: 80
+    protocol: HTTP
+    algorithm: ROUND_ROBIN
+    type: PUBLIC
+    timeout: 30
+    region: "{{ lookup('env', 'RAX_REGION') | upper }}"
+    wait: yes
+    state: present
+  register: rax_load_balancer
+

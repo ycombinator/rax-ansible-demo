@@ -13,8 +13,8 @@
   copy: src=index.php dest={{ docroot }}/index.php
   
 - name: Create nginx config file for server
-  template: src=demosite.conf.j2 dest=/etc/nginx/sites-available/demosite.conf
+  template: src=demo_site.conf.j2 dest=/etc/nginx/sites-available/demo_site.conf
 
 - name: Enable nginx config file for server
-  file: path=/etc/nginx/sites-enabled/demosite.conf src=/etc/nginx/sites-available/demosite.conf state=link
+  file: path=/etc/nginx/sites-enabled/demo_site.conf src=/etc/nginx/sites-available/demo_site.conf state=link
   notify: restart nginx

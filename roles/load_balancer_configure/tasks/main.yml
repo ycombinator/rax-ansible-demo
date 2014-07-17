@@ -1,0 +1,14 @@
+---
+- name: Add web servers to load balancer
+  rax_clb_nodes:
+    credentials: ~/.rackspace_cloud_credentials
+    load_balancer_id: "{{ rax_load_balancer.balancer.id }}"
+    address: "{{ item.rax_networks.private|first }}"
+    port: 8000
+    condition: enabled
+    type: primary
+    wait: yes
+    region: "{{ lookup('env', 'RAX_REGION') | upper }}"
+  with_items: rax_webservers.success
+  when: rax_webservers.action == 'create'
+
