@@ -1,0 +1,17 @@
+#!/bin/bash
+
+presentation="$1"
+
+if [ -z "$presentation" ]; then
+  echo "Usage: $0 <presentation>"
+  exit 1
+fi
+
+echo "Building presentation..."
+mdpress ${presentation}.md
+
+echo "Copying images folder into presentation folder..."
+cp -r img $presentation/
+
+echo "Opening presentation in browser..."
+open $presentation/index.html
