@@ -9,12 +9,11 @@ title: Ansible at Rackspace
 ---
 = data-y="2000" id="intro"
 
-## Introduction
+## Let's talk about...
 
-- From 0 to prod in 3 months
-- Lessons learnt
-- On the shoulders of giants
-- Ansible `rax*` modules ![awesome](img/live_demo_sticker_sm.png)
+- Lessons learnt from developer.rackspace.com deployment, *and*
+- Using Ansible `rax*` modules ![live demo](img/live_demo_sticker_sm.png)
+- Helpful references
 
 ---
 = data-y="4000" id="lesson-vault-is-great"
@@ -35,7 +34,7 @@ title: Ansible at Rackspace
 
 ## Lessons Learnt:
 
-## *Reuse Ansible modules*
+## *Reuse Ansible Roles*
 
 ---
 = data-y="4000" id="lesson-contribute-back"
