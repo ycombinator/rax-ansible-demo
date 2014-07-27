@@ -59,6 +59,10 @@ title: Ansible at Rackspace
 
 ## On the shoulders of giants
 
+- Ansible Google Group
+
+    *https://groups.google.com/forum/#!forum/ansible-project*
+
 - Jesse Keating
 
     *https://twitter.com/iamjkeating*
@@ -70,10 +74,6 @@ title: Ansible at Rackspace
     *https://twitter.com/sivel*
 
     *https://github.com/sivel*
-
-- Ansible Google Group
-
-    *https://groups.google.com/forum/#!forum/ansible-project*
 
 ---
 = data-y="10000" id="fin"
